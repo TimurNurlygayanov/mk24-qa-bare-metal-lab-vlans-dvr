@@ -2,7 +2,7 @@ classes:
 - system.linux.system.repo.contrail
 - system.linux.system.repo.mos9
 - system.nova.compute.cluster
-- system.opencontrail.compute.cluster
+- system.neutron.compute.cluster
 - cluster.mk24_qa_baremetal_vlan_dvr
 parameters:
   _param:
@@ -14,40 +14,16 @@ parameters:
     cluster_node02_address: ${_param:openstack_control_node02_address}
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
-    opencontrail_compute_address: ${_param:single_address}
-  linux:
-    network:
-      interface:
-        p4p1:
-          enabled: true
-          type: eth
-          proto: manual
-          mtu: 9000
-        p4p1.602:
-          enabled: true
-          type: vlan
-          address: ${_param:control_address}
-          gateway: 172.20.8.1
-          netmask: 255.255.252.0
-          mtu: 1500
-          use_interfaces:
-          - p4p1
-        p4p1.637:
-          enabled: true
-          type: vlan
-          proto: manual
-          mtu: 9000
-          use_interfaces:
-          - p4p1
-        vhost0:
-          enabled: true
-          type: eth
-          mtu: 9000
-          address: ${_param:single_address}
-          netmask: 255.255.252.0
-          pre_up_cmds:
-          - /usr/lib/contrail/if-vhost0
-          use_interfaces:
-          - p4p1.637
-          name_servers:
-            - 8.8.8.8
+    primary_interface: eth1
+    external_interface: eth3
+    interface_mtu: 9000
+  nova:
+    compute:
+      vncproxy_url: http://${_param:cluster_vip_address}:6080
+      notification:
+        driver: messagingv2
+      message_queue:
+        members:
+          - host: ${_param:openstack_control_node01_address}
+          - host: ${_param:openstack_control_node02_address}
+          - host: ${_param:openstack_control_node03_address}

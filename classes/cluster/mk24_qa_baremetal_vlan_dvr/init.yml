@@ -6,7 +6,6 @@ classes:
 - system.openssh.server.team.qa_scale
 - cluster.mk24_qa_baremetal_vlan_dvr.fuel
 - cluster.mk24_qa_baremetal_vlan_dvr.openstack
-- cluster.mk24_qa_baremetal_vlan_dvr.opencontrail
 - cluster.mk24_qa_baremetal_vlan_dvr.stacklight
 - cluster.mk24_qa_baremetal_vlan_dvr.stacklight.client
 parameters: 
@@ -66,16 +65,11 @@ parameters:
     stacklight_telemetry_node02_address: 10.167.4.87
     stacklight_telemetry_node03_address: 10.167.4.88
     # openstack compute
-    openstack_compute_node01_single_address: 10.167.2.101
-    openstack_compute_node02_single_address: 10.167.2.102
-    openstack_compute_node03_single_address: 10.167.2.103
-    openstack_compute_node04_single_address: 10.167.2.104
-    openstack_compute_node05_single_address: 10.167.2.105
-    openstack_compute_node01_control_address: 10.167.4.101
-    openstack_compute_node02_control_address: 10.167.4.102
-    openstack_compute_node03_control_address: 10.167.4.103
-    openstack_compute_node04_control_address: 10.167.4.104
-    openstack_compute_node05_control_address: 10.167.4.105
+    openstack_compute_node01_single_address: 10.167.4.101
+    openstack_compute_node02_single_address: 10.167.4.102
+    openstack_compute_node03_single_address: 10.167.4.103
+    openstack_compute_node04_single_address: 10.167.4.104
+    openstack_compute_node05_single_address: 10.167.4.105
 
     # Interface definitions
     linux_dhcp_interface:
@@ -88,6 +82,5 @@ parameters:
       proto: static
       address: ${_param:single_address}
       netmask: 255.255.252.0
-      gateway: 172.20.8.1
       name_servers:
         - 8.8.8.8
