@@ -1,0 +1,17 @@
+classes:
+- cluster.mk24_qa_baremetal_vlan_dvr.openstack.control
+- cluster.mk24_qa_baremetal_vlan_dvr.openstack.control_init
+parameters:
+  _param:
+    keepalived_vip_priority: 103
+    linux_system_codename: trusty
+    opencontrail_database_id: 1
+    rabbitmq_cluster_role: master
+    salt_master_host: 172.18.173.120
+    single_address: 10.167.4.11
+  linux:
+    system:
+      name: ctl01
+      domain: mk24-dvr.test.local
+      cluster: default
+      environment: prd

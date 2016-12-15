@@ -1,0 +1,13 @@
+classes:
+- cluster.mk24_qa_baremetal_vlan_dvr.openstack.gateway
+parameters:
+  _param:
+    linux_system_codename: trusty
+    salt_master_host: 172.18.173.120
+    single_address: 172.16.178.104
+  linux:
+    system:
+      name: gtw01
+      domain: mk24-dvr.test.local
+      cluster: default
+      environment: prd

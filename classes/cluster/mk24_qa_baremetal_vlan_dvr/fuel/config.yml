@@ -70,3 +70,12 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_compute_node04_single_address}
+        fuel_compute_node01:
+          params:
+            deploy_address: ${_param:fuel_compute_node01_deploy_address}
+        fuel_compute_node02:
+          params:
+            deploy_address: ${_param:fuel_compute_node02_deploy_address}
+        fuel_compute_node03:
+          params:
+            deploy_address: ${_param:fuel_compute_node03_deploy_address}

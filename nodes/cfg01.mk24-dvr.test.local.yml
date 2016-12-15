@@ -1,0 +1,32 @@
+classes:
+- service.git.client
+- system.linux.system.single
+#- system.openssh.client.workshop
+- system.salt.master.single
+#- system.salt.master.formula.git
+- system.reclass.storage.salt
+- cluster.mk24_qa_baremetal_vlan_dvr.fuel.config
+parameters:
+  _param:
+    reclass_data_repository: "https://github.com/TimurNurlygayanov/mk24qa-salt-models"
+    reclass_data_revision: master
+    salt_formula_branch: master
+    reclass_config_master: 172.18.173.120
+    single_address: 172.18.173.120
+    salt_master_host: 172.18.173.120
+    salt_master_base_environment: prd
+    linux_system_codename: trusty
+  linux:
+    system:
+      name: cfg01
+      domain: mk24-dvr.test.local
+salt:
+  master:
+    accept_policy: open_mode
+    source:
+      engine: pkg
+      
+  minion:
+    source:
+      engine: pkg
+      

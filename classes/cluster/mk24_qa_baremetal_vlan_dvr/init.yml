@@ -18,6 +18,8 @@ parameters:
     fuel_config_address: 10.167.4.90
     fuel_config_deploy_address: 172.16.178.100
 
+    openstack_gateway_address: 172.16.178.104
+
     fuel_compute_node01_address: 10.167.4.241
     fuel_compute_node02_address: 10.167.4.242
     fuel_compute_node03_address: 10.167.4.243
