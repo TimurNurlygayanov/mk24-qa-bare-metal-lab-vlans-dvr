@@ -4,6 +4,7 @@ classes:
 - system.memcached.server.single
 - system.keystone.server.cluster
 - system.glance.control.cluster
+- system.neutron.openvswitch.cluster
 - system.nova.control.cluster
 - system.cinder.control.cluster
 - system.cinder.volume.single
@@ -25,3 +26,7 @@ parameters:
     network:
       interface:
         eth1: ${_param:linux_single_interface}
+  neutron:
+    server:
+      backend:
+        tenant_vlan_range: "110:150"
