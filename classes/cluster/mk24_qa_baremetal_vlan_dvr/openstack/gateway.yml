@@ -7,9 +7,6 @@ classes:
 - cluster.mk24_qa_baremetal_vlan_dvr
 parameters:
   _param:
-    primary_interface: eth1
-    tenant_interface: eth2
-    external_interface: eth3
     interface_mtu: 9000
     neutron_gateway_dvr: True
     neutron_gateway_agent_mode: dvr_snat
