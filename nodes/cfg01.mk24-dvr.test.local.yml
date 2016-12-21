@@ -11,9 +11,9 @@ parameters:
     reclass_data_repository: "https://github.com/TimurNurlygayanov/mk24qa-salt-models"
     reclass_data_revision: master
     salt_formula_branch: master
-    reclass_config_master: 172.18.178.100
-    single_address: 172.18.178.100
-    salt_master_host: 172.18.178.100
+    reclass_config_master: 172.16.178.100
+    single_address: 172.16.178.100
+    salt_master_host: 172.16.178.100
     salt_master_base_environment: prd
     linux_system_codename: trusty
   linux:
