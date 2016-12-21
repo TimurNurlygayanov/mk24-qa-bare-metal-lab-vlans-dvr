@@ -54,6 +54,7 @@ parameters:
     opencontrail_control_node02_address: 10.167.4.22
     opencontrail_control_node03_address: 10.167.4.23
     # stacklight service addresses
+    stacklight_environment: test
     stacklight_monitor_address: 10.167.4.70
     stacklight_monitor_node01_address: 10.167.4.71
     stacklight_monitor_node02_address: 10.167.4.72
