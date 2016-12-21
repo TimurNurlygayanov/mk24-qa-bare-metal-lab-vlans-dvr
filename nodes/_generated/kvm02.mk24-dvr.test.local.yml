@@ -4,7 +4,7 @@ parameters:
   _param:
     deploy_address: 172.16.178.102
     linux_system_codename: trusty
-    salt_master_host: 172.18.173.120
+    salt_master_host: 172.16.178.100
     single_address: 10.167.4.242
   linux:
     system:

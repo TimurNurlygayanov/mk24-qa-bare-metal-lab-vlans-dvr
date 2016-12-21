@@ -4,7 +4,7 @@ parameters:
   _param:
     keepalived_vip_priority: 103
     linux_system_codename: xenial
-    salt_master_host: 172.18.173.120
+    salt_master_host: 172.16.178.100
     single_address: 10.167.4.86
   linux:
     system:

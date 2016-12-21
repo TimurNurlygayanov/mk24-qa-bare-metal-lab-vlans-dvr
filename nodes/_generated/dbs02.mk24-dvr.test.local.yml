@@ -6,7 +6,7 @@ parameters:
     keepalived_vip_priority: 102
     linux_system_codename: trusty
     mysql_cluster_role: slave
-    salt_master_host: 172.18.173.120
+    salt_master_host: 172.16.178.100
     single_address: 10.167.4.52
   linux:
     system:
