@@ -71,11 +71,11 @@ parameters:
   linux:
     network:
       interface:
-        p4p1:
+        eth0:
           enabled: true
           type: eth
           mtu: 9000
-        p4p2:
+        eth1:
           enabled: true
           type: slave
           mtu: 9000
@@ -84,8 +84,8 @@ parameters:
           enabled: true
           type: bond
           use_interfaces:
-          - p4p2
-          slaves: p4p2
+          - eth1
+          slaves: eth1
           mode: active-backup
         bond0.100:
           enabled: true
@@ -100,7 +100,7 @@ parameters:
           address: ${_param:deploy_address}
           netmask: 255.255.255.224
           use_interfaces:
-          - p4p1
+          - eth0
         br100:
           enabled: true
           type: bridge

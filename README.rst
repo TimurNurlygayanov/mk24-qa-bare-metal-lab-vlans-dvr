@@ -3,6 +3,12 @@
 mk24_qa_baremetal_vlan_dvr Reclass Model
 ================================================
 
+Introduction
+============
+This repository contains salt model for QA bare-metal lab with MK24 Neutron OVS + VLANs + DVR.
+All OpenStack controller nodes, nodes with BD and RabbitMQ clusters will be deployed on virtual machines (kvm01, kvm02 and kvm03),
+all compute nodes and network gateway nodes will be bare-metal nodes.
+
 config node
 ===========
 

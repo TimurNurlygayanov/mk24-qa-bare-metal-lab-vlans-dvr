@@ -149,8 +149,3 @@ parameters:
           names:
           - cmp02
           - cmp02.${_param:cluster_domain}
-        cmp03:
-          address: ${_param:fuel_compute_node03_deploy_address}
-          names:
-          - cmp03
-          - cmp03.${_param:cluster_domain}
