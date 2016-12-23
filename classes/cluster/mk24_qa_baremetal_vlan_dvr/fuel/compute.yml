@@ -63,11 +63,6 @@ parameters:
           ram: 8192
           disk_profile: xxlarge
           net_profile: default
-      cluster:
-        internal:
-          node:
-            prx02:
-              provider: kvm03.${_param:cluster_domain}
   linux:
     network:
       interface:
