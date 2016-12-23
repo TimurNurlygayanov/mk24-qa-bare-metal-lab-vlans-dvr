@@ -63,6 +63,15 @@ parameters:
           ram: 8192
           disk_profile: xxlarge
           net_profile: default
+  virt:
+    nic:
+      default:
+        eth1:
+          bridge: br0
+          model: virtio
+        eth0:
+          bridge: br100
+          model: virtio
   linux:
     network:
       interface:
