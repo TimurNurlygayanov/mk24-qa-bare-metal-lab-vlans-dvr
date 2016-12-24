@@ -91,7 +91,7 @@ parameters:
           - eth1
           slaves: eth1
           mode: active-backup
-        bond0.100:
+        bond0.1800:
           enabled: true
           type: vlan
           proto: manual
@@ -112,4 +112,4 @@ parameters:
           netmask: 255.255.255.0
           mtu: 9000
           use_interfaces:
-          - bond0.100
+          - bond0.1800

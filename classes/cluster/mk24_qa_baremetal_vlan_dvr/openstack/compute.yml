@@ -1,5 +1,4 @@
 classes:
-- system.linux.system.repo.contrail
 - system.linux.system.repo.mos9
 - system.nova.compute.cluster
 - system.neutron.compute.cluster
@@ -14,8 +13,8 @@ parameters:
     cluster_node02_address: ${_param:openstack_control_node02_address}
     cluster_node03_hostname: ctl03
     cluster_node03_address: ${_param:openstack_control_node03_address}
-    primary_interface: eth1
-    external_interface: eth3
+    primary_interface: eth0
+    external_interface: eth1
     interface_mtu: 9000
   nova:
     compute:
@@ -30,7 +29,7 @@ parameters:
   linux:
     network:
       interface:
-        p4p2:
+        eth1:
           enabled: true
           type: slave
           mtu: 9000
@@ -39,6 +38,6 @@ parameters:
           enabled: true
           type: bond
           use_interfaces:
-          - p4p2
-          slaves: p4p2
+          - eth1
+          slaves: eth1
           mode: active-backup
