@@ -81,6 +81,6 @@ parameters:
       type: eth
       proto: static
       address: ${_param:single_address}
-      netmask: 255.255.252.0
+      netmask: 255.255.255.0
       name_servers:
         - 8.8.8.8
