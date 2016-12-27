@@ -30,6 +30,14 @@ parameters:
     server:
       backend:
         tenant_vlan_range: "1801:1849"
+    database:
+      host: ${_param:openstack_database_address}
+    message_queue:
+      host: ${_param:openstack_message_queue_address}
+      members:
+        - host: ${_param:openstack_message_queue_node01_address}
+        - host: ${_param:openstack_message_queue_node02_address}
+        - host: ${_param:openstack_message_queue_node03_address}
   keystone:
     server:
       region: ${_param:openstack_region}
@@ -39,6 +47,7 @@ parameters:
       database:
         host: ${_param:openstack_database_address}
       message_queue:
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
@@ -53,6 +62,7 @@ parameters:
       database:
         host: ${_param:openstack_database_address}
       message_queue:
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
@@ -82,6 +92,7 @@ parameters:
         vncproxy_port: 6080
       vncproxy_url: http://${_param:cluster_vip_address}:6080
       message_queue:
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
@@ -99,6 +110,7 @@ parameters:
       database:
         host: ${_param:openstack_database_address}
       message_queue:
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
@@ -113,6 +125,7 @@ parameters:
         password: ${_param:heat_domain_admin_password}
         domain: heat
       message_queue:
+        host: ${_param:openstack_message_queue_address}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
