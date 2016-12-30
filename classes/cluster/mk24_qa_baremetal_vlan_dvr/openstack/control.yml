@@ -28,7 +28,7 @@ parameters:
     network:
       interface:
         eth1: ${_param:linux_single_interface}
-        system:
+    system:
       package:
         python-msgpack:
           version: latest
