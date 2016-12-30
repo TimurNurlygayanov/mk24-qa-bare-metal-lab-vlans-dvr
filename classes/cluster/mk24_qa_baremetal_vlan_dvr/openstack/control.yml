@@ -1,6 +1,7 @@
 classes:
 - system.linux.system.repo.mos9
 - system.linux.system.repo.tcp_extra
+- system.linux.system.repo.saltstack_2016_3_trusty
 - system.memcached.server.single
 - system.keystone.server.cluster
 - system.glance.control.cluster
@@ -26,6 +27,10 @@ parameters:
     network:
       interface:
         eth1: ${_param:linux_single_interface}
+        system:
+      package:
+        python-msgpack:
+          version: latest
   neutron:
     server:
       backend:
@@ -34,24 +39,17 @@ parameters:
       host: ${_param:openstack_database_address}
     message_queue:
       host: ${_param:openstack_message_queue_address}
-      members:
-        - host: ${_param:openstack_message_queue_node01_address}
-        - host: ${_param:openstack_message_queue_node02_address}
-        - host: ${_param:openstack_message_queue_node03_address}
   keystone:
     server:
       region: ${_param:openstack_region}
       tokens:
         engine: fernet
       admin_email: ${_param:admin_email}
+      notification: true
       database:
         host: ${_param:openstack_database_address}
       message_queue:
         host: ${_param:openstack_message_queue_address}
-        members:
-          - host: ${_param:openstack_message_queue_node01_address}
-          - host: ${_param:openstack_message_queue_node02_address}
-          - host: ${_param:openstack_message_queue_node03_address}
   glance:
     server:
       identity:
@@ -63,12 +61,13 @@ parameters:
         host: ${_param:openstack_database_address}
       message_queue:
         host: ${_param:openstack_message_queue_address}
-        members:
-          - host: ${_param:openstack_message_queue_node01_address}
-          - host: ${_param:openstack_message_queue_node02_address}
-          - host: ${_param:openstack_message_queue_node03_address}
+      notification: true
   nova:
     controller:
+      networking: dvr
+      notification: true
+      metadata:
+        password: ${_param:metadata_password}
       workers: 4
       database:
         host: ${_param:openstack_database_address}
@@ -93,17 +92,19 @@ parameters:
       vncproxy_url: http://${_param:cluster_vip_address}:6080
       message_queue:
         host: ${_param:openstack_message_queue_address}
-        members:
-          - host: ${_param:openstack_message_queue_node01_address}
-          - host: ${_param:openstack_message_queue_node02_address}
-          - host: ${_param:openstack_message_queue_node03_address}
   cinder:
     volume:
+      notification: true
       identity:
         region: ${_param:openstack_region}
       enabled: false
       notification: true
+      database:
+        host: ${_param:openstack_database_address}
+      message_queue:
+        host: ${_param:openstack_message_queue_address}
     controller:
+      notification: true
       identity:
         region: ${_param:openstack_region}
       notification: true
@@ -111,10 +112,6 @@ parameters:
         host: ${_param:openstack_database_address}
       message_queue:
         host: ${_param:openstack_message_queue_address}
-        members:
-          - host: ${_param:openstack_message_queue_node01_address}
-          - host: ${_param:openstack_message_queue_node02_address}
-          - host: ${_param:openstack_message_queue_node03_address}
   heat:
     server:
       database:
@@ -126,7 +123,3 @@ parameters:
         domain: heat
       message_queue:
         host: ${_param:openstack_message_queue_address}
-        members:
-          - host: ${_param:openstack_message_queue_node01_address}
-          - host: ${_param:openstack_message_queue_node02_address}
-          - host: ${_param:openstack_message_queue_node03_address}

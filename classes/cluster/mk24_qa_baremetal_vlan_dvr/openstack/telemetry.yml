@@ -1,5 +1,6 @@
 classes:
 - system.linux.system.repo.mos9
+- system.linux.system.repo.saltstack_2016_3_trusty
 - cluster.mk24_qa_baremetal_vlan_dvr
 parameters:
   linux:

@@ -6,7 +6,7 @@ classes:
 - system.reclass.storage.salt
 - system.reclass.storage.system.physical_control_cluster
 - system.reclass.storage.system.openstack_control_cluster
-- system.reclass.storage.system.openstack_proxy_single
+- system.reclass.storage.system.openstack_proxy_cluster
 - system.reclass.storage.system.openstack_gateway_single
 - system.reclass.storage.system.openstack_database_cluster
 - system.reclass.storage.system.openstack_message_queue_cluster
@@ -55,9 +55,12 @@ parameters:
         fuel_compute_node01:
           params:
             deploy_address: ${_param:fuel_compute_node01_deploy_address}
+            linux_system_codename: xenial
         fuel_compute_node02:
           params:
             deploy_address: ${_param:fuel_compute_node02_deploy_address}
+            linux_system_codename: xenial
         fuel_compute_node03:
           params:
             deploy_address: ${_param:fuel_compute_node03_deploy_address}
+            linux_system_codename: xenial
