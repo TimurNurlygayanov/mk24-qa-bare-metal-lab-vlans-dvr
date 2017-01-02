@@ -108,6 +108,7 @@ parameters:
           type: bridge
           address: ${_param:deploy_address}
           netmask: 255.255.255.0
+          gateway: 172.16.178.1
           use_interfaces:
           - p4p1
         br100:
