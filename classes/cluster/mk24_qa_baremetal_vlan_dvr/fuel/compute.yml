@@ -65,10 +65,10 @@ parameters:
   virt:
     nic:
       default:
-        eth1:
+        p4p2:
           bridge: br0
           model: virtio
-        eth0:
+        p4p1:
           bridge: br100
           model: virtio
   libvirt:
@@ -78,21 +78,23 @@ parameters:
   linux:
     network:
       interface:
-        eth0:
+        p4p1:
           enabled: true
+          proto: manual
           type: eth
           mtu: 9000
-        eth1:
+        p4p2:
           enabled: true
           type: slave
           mtu: 9000
           master: bond0
         bond0:
           enabled: true
+          proto: manual
           type: bond
           use_interfaces:
-          - eth1
-          slaves: eth1
+          - p4p2
+          slaves: p4p2
           mode: active-backup
         bond0.1800:
           enabled: true
@@ -107,7 +109,7 @@ parameters:
           address: ${_param:deploy_address}
           netmask: 255.255.255.0
           use_interfaces:
-          - eth0
+          - p4p1
         br100:
           enabled: true
           type: bridge
