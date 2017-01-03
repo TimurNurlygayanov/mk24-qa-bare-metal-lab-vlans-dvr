@@ -22,15 +22,17 @@ parameters:
   linux:
     network:
       interface:
-        eth1:
+        em2:
           enabled: true
           type: slave
           mtu: 9000
           master: bond0
         bond0:
           enabled: true
+          proto: manual
           type: bond
           use_interfaces:
-          - eth1
-          slaves: eth1
+          - em2
+          slaves: em2
           mode: active-backup
+
