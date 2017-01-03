@@ -4,6 +4,7 @@ parameters:
     openstack_version: mitaka
     openstack_region: RegionOne
     admin_email: root@localhost
+    tenant_address: ${_param:single_address} #only for VLAN setup without VXLAN tunnel int
     neutron_control_dvr: True
     neutron_tenant_network_types: "flat,vlan"
     neutron_l3_ha: False
