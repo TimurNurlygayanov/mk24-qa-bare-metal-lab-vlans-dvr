@@ -66,6 +66,7 @@ parameters:
     mongodb_ceilometer_password: N6RSlmcnuFU42aqU
     mongodb_admin_password: Hio2Ym9W29tJcioU
     mongodb_shared_key: hW09wqiUn5iG4O5M6mE0Bug3gPZwp3tAa1Luwc0xdP2jPEoBnmHc0pi8WsjiOBeh
+    metadata_password: workshop
   linux:
     network:
       host:
