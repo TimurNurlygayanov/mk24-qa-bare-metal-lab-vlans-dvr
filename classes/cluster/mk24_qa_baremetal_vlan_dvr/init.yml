@@ -43,14 +43,14 @@ parameters:
     openstack_message_queue_node02_address: 10.167.4.42
     openstack_message_queue_node03_address: 10.167.4.43
     # opencontrail service addresses
-    opencontrail_analytics_address: 10.167.4.30
-    opencontrail_analytics_node01_address: 10.167.4.31
-    opencontrail_analytics_node02_address: 10.167.4.32
-    opencontrail_analytics_node03_address: 10.167.4.33
-    opencontrail_control_address: 10.167.4.31
-    opencontrail_control_node01_address: 10.167.4.21
-    opencontrail_control_node02_address: 10.167.4.22
-    opencontrail_control_node03_address: 10.167.4.23
+    opencontrail_analytics_address: 10.167.4.10
+    opencontrail_analytics_node01_address: 10.167.4.11
+    opencontrail_analytics_node02_address: 10.167.4.12
+    opencontrail_analytics_node03_address: 10.167.4.13
+    opencontrail_control_address: 10.167.4.10
+    opencontrail_control_node01_address: 10.167.4.11
+    opencontrail_control_node02_address: 10.167.4.12
+    opencontrail_control_node03_address: 10.167.4.13
     # stacklight service addresses
     stacklight_environment: test
     stacklight_monitor_address: 10.167.4.70

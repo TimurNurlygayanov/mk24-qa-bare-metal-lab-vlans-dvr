@@ -14,11 +14,6 @@ parameters:
     gateway:
       backend:
         tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
-      message_queue:
-        members:
-          - host: ${_param:openstack_control_node01_address}
-          - host: ${_param:openstack_control_node02_address}
-          - host: ${_param:openstack_control_node03_address}
   linux:
     network:
       bridge: openvswitch
