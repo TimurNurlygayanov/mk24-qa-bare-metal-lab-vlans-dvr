@@ -21,6 +21,7 @@ parameters:
         host: ${_param:openstack_message_queue_address}
   linux:
     network:
+      bridge: openvswitch
       interface:
         em2:
           enabled: true
