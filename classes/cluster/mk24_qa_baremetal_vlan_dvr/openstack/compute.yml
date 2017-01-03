@@ -59,7 +59,7 @@ parameters:
           enabled: true
           type: ovs_bridge
         br-prv:
-          enabed: true
+          enabled: true
           type: ovs_bridge
         br-mgmt:
           enabled: true
