@@ -12,13 +12,13 @@ parameters:
     cluster_vip_address: ${_param:openstack_control_address}
   neutron:
     gateway:
-      local_ip: ${_param:single_address}
       backend:
-        tenant_vlan_range: "1801:1849"
-      database:
-        host: ${_param:openstack_database_address}
+        tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
       message_queue:
-        host: ${_param:openstack_message_queue_address}
+        members:
+          - host: ${_param:openstack_control_node01_address}
+          - host: ${_param:openstack_control_node02_address}
+          - host: ${_param:openstack_control_node03_address}
   linux:
     network:
       bridge: openvswitch
