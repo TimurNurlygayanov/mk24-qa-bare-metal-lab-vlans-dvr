@@ -43,6 +43,8 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_compute_node01_single_address}
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2
         openstack_compute_node02:
           name: cmp02
           domain: ${_param:cluster_domain}
@@ -52,15 +54,27 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_compute_node02_single_address}
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2
+        openstack_gateway_node01:
+          params:
+            primary_first_nic: em1
+            primary_second_nic: em2
         fuel_compute_node01:
           params:
             deploy_address: ${_param:fuel_compute_node01_deploy_address}
             linux_system_codename: xenial
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2
         fuel_compute_node02:
           params:
             deploy_address: ${_param:fuel_compute_node02_deploy_address}
             linux_system_codename: xenial
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2
         fuel_compute_node03:
           params:
             deploy_address: ${_param:fuel_compute_node03_deploy_address}
             linux_system_codename: xenial
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2

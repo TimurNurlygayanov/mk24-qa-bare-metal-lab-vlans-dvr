@@ -18,7 +18,8 @@ parameters:
     network:
       bridge: openvswitch
       interface:
-        em2:
+        primary_second_nic:
+          name: ${_param:primary_second_nic}
           enabled: true
           type: slave
           mtu: 9000
@@ -30,8 +31,8 @@ parameters:
           ovs_type: OVSPort
           type: bond
           use_interfaces:
-          - em2
-          slaves: em2
+          - ${_param:primary_second_nic}
+          slaves: ${_param:primary_second_nic}
           mode: active-backup
           mtu: 9000
         br-floating:

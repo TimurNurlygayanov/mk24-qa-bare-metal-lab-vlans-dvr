@@ -78,12 +78,14 @@ parameters:
   linux:
     network:
       interface:
-        p4p1:
+        primary_first_nic:
+          name: ${_param:primary_first_nic}
           enabled: true
           proto: manual
           type: eth
           mtu: 9000
-        p4p2:
+        primary_second_nic:
+          name: ${_param:primary_second_nic}
           enabled: true
           type: slave
           mtu: 9000
@@ -93,8 +95,8 @@ parameters:
           proto: manual
           type: bond
           use_interfaces:
-          - p4p2
-          slaves: p4p2
+          - ${_param:primary_second_nic}
+          slaves: ${_param:primary_second_nic}
           mode: active-backup
         bond0.1800:
           enabled: true
@@ -110,7 +112,7 @@ parameters:
           netmask: 255.255.255.0
           gateway: 172.16.178.1
           use_interfaces:
-          - p4p1
+          - ${_param:primary_first_nic}
         br100:
           enabled: true
           type: bridge
