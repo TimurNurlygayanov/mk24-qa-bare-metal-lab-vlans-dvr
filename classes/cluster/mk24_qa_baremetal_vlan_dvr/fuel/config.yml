@@ -7,7 +7,7 @@ classes:
 - system.reclass.storage.system.physical_control_cluster
 - system.reclass.storage.system.openstack_control_cluster
 - system.reclass.storage.system.openstack_proxy_cluster
-- system.reclass.storage.system.openstack_gateway_single
+- system.reclass.storage.system.openstack_gateway_cluster
 - system.reclass.storage.system.openstack_database_cluster
 - system.reclass.storage.system.openstack_message_queue_cluster
 - system.reclass.storage.system.stacklight_log_cluster
@@ -57,6 +57,10 @@ parameters:
             primary_first_nic: p4p1
             primary_second_nic: p4p2
         openstack_gateway_node01:
+          params:
+            primary_first_nic: em1
+            primary_second_nic: em2
+        openstack_gateway_node02:
           params:
             primary_first_nic: em1
             primary_second_nic: em2
