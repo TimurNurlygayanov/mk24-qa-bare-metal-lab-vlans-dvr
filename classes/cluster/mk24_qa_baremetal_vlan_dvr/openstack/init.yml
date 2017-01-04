@@ -4,9 +4,8 @@ parameters:
     openstack_version: mitaka
     openstack_region: RegionOne
     admin_email: root@localhost
-    tenant_address: ${_param:single_address} #only for VLAN setup without VXLAN tunnel int
     neutron_control_dvr: False
-    neutron_tenant_network_types: "flat,vlan"
+    neutron_tenant_network_types: "flat,vxlan"
     neutron_l3_ha: True
     neutron_global_physnet_mtu: 9000
     neutron_external_mtu: 9000
@@ -15,7 +14,7 @@ parameters:
     neutron_compute_dvr: False
     neutron_compute_agent_mode: legacy
     neutron_compute_external_access: False
-    neutron_tenant_vlan_range: "1810:1840"
+#    neutron_tenant_vlan_range: "1810:1840" not needed
     galera_server_cluster_name: openstack_cluster
     galera_server_maintenance_password: F2yEhgwPxyG6ExMl
     galera_server_admin_password: sJI8rf5YGypAnuf4

@@ -38,10 +38,6 @@ parameters:
       package:
         python-msgpack:
           version: latest
-  neutron:
-    server:
-      backend:
-        tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
   keystone:
     server:
       region: ${_param:openstack_region}

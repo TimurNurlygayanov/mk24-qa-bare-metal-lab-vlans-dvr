@@ -8,10 +8,6 @@ parameters:
   _param:
     interface_mtu: 1500
     cluster_vip_address: ${_param:openstack_control_address}
-  neutron:
-    gateway:
-      backend:
-        tenant_vlan_range: "${_param:neutron_tenant_vlan_range}"
   linux:
     network:
       bridge: openvswitch
@@ -36,9 +32,6 @@ parameters:
         br-floating:
           enabled: true
           type: ovs_bridge
-        br-prv:
-          enabled: true
-          type: ovs_bridge
         br-mgmt:
           enabled: true
           type: ovs_port
@@ -47,15 +40,11 @@ parameters:
           ovs_options: tag=1800
           address: ${_param:single_address}
           netmask: 255.255.255.0
-        floating-to-prv:
+        br-mesh:
           enabled: true
           type: ovs_port
-          port_type: patch
           bridge: br-floating
-          peer: prv-to-floating
-        prv-to-floating:
-          enabled: true
-          type: ovs_port
-          port_type: patch
-          bridge: br-prv
-          peer: floating-to-prv
+          proto: static
+          ovs_options: tag=1801
+          address: ${_param:tenant_address}
+          netmask: 255.255.255.0
