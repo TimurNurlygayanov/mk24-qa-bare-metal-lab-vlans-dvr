@@ -7,8 +7,6 @@ classes:
 parameters:
   _param:
     interface_mtu: 1500
-    neutron_gateway_dvr: True
-    neutron_gateway_agent_mode: dvr_snat
     cluster_vip_address: ${_param:openstack_control_address}
   neutron:
     gateway:
