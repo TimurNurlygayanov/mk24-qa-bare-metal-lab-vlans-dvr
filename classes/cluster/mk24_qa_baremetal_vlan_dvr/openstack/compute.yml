@@ -34,8 +34,6 @@ parameters:
         bond0:
           enabled: true
           proto: manual
-          ovs_bridge: br-floating
-          ovs_type: OVSPort
           type: bond
           use_interfaces:
           - ${_param:primary_second_nic}

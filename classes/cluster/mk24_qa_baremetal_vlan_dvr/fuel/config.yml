@@ -43,6 +43,7 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_compute_node01_single_address}
+            tenant_address: ${_param:openstack_compute_node01_tenant_address}
             primary_first_nic: p4p1
             primary_second_nic: p4p2
         openstack_compute_node02:
@@ -54,16 +55,21 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:openstack_compute_node02_single_address}
+            tenant_address: ${_param:openstack_compute_node02_tenant_address}
             primary_first_nic: p4p1
             primary_second_nic: p4p2
         openstack_gateway_node01:
           params:
             primary_first_nic: em1
             primary_second_nic: em2
+            single_address: ${_param:openstack_gateway_node01_address}
+            tenant_address: ${_param:openstack_gateway_node01_tenant_address}
         openstack_gateway_node02:
           params:
             primary_first_nic: p4p1
             primary_second_nic: p4p2
+            single_address: ${_param:openstack_gateway_node02_address}
+            tenant_address: ${_param:openstack_gateway_node02_tenant_address}
         fuel_compute_node01:
           params:
             deploy_address: ${_param:fuel_compute_node01_deploy_address}

@@ -19,9 +19,16 @@ parameters:
     openstack_gateway_node01_address: 10.167.4.104
     openstack_gateway_node02_address: 10.167.4.105
 
+    openstack_gateway_node01_tenant_address: 192.168.50.6
+    openstack_gateway_node02_tenant_address: 192.168.50.7
+
     fuel_compute_node01_address: 10.167.4.241
     fuel_compute_node02_address: 10.167.4.242
     fuel_compute_node03_address: 10.167.4.243
+
+    openstack_compute_node01_tenant_address: 192.168.50.3
+    openstack_compute_node02_tenant_address: 192.168.50.4
+    openstack_compute_node03_tenant_address: 192.168.50.5
 
     fuel_compute_node01_deploy_address: 172.16.178.101
     fuel_compute_node02_deploy_address: 172.16.178.102
