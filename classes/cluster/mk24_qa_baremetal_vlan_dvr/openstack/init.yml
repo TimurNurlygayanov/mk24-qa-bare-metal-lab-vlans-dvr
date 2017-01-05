@@ -143,12 +143,12 @@ parameters:
           - dbs03
           - dbs03.${_param:cluster_domain}
         cmp01:
-          address: ${_param:fuel_compute_node01_deploy_address}
+          address: ${_param:openstack_compute_node01_single_address}
           names:
           - cmp01
           - cmp01.${_param:cluster_domain}
         cmp02:
-          address: ${_param:fuel_compute_node02_deploy_address}
+          address: ${_param:openstack_compute_node02_single_address}
           names:
           - cmp02
           - cmp02.${_param:cluster_domain}
