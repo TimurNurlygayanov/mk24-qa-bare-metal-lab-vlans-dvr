@@ -62,8 +62,8 @@ parameters:
             primary_second_nic: em2
         openstack_gateway_node02:
           params:
-            primary_first_nic: em1
-            primary_second_nic: em2
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2
         fuel_compute_node01:
           params:
             deploy_address: ${_param:fuel_compute_node01_deploy_address}
