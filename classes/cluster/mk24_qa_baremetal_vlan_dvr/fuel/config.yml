@@ -70,6 +70,18 @@ parameters:
             primary_second_nic: p4p2
             single_address: ${_param:openstack_gateway_node02_address}
             tenant_address: ${_param:openstack_gateway_node02_tenant_address}
+        openstack_gateway_node03:
+          name: gtw03
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.openstack.gateway
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename: trusty
+            primary_first_nic: p4p1
+            primary_second_nic: p4p2
+            single_address: ${_param:openstack_gateway_node03_address}
+            tenant_address: ${_param:openstack_gateway_node03_tenant_address}
         fuel_compute_node01:
           params:
             deploy_address: ${_param:fuel_compute_node01_deploy_address}
