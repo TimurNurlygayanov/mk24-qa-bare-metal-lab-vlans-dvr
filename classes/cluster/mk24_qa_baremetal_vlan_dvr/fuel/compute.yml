@@ -66,10 +66,10 @@ parameters:
     nic:
       default:
         p4p2:
-          bridge: br0
+          bridge: br100
           model: virtio
         p4p1:
-          bridge: br100
+          bridge: br0
           model: virtio
   libvirt:
     server:
